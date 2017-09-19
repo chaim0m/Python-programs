@@ -1,0 +1,20 @@
+balance=120000
+startbalance=balance
+annualInterestRate=0.2
+monthlyinterest=0.2/12
+lower=balance/12
+pwi=(1+monthlyinterest)**12
+upper=(balance*pwi)/12
+while True:
+    balance=startbalance
+    fixed=lower+(upper-lower)/2
+    for i in range(12):
+       balance-=fixed
+       balance+=balance*(annualInterestRate/12.0)       
+    if round(balance,2)>0:
+           lower=lower+((upper-lower)/2)
+    elif round(balance,2)<0:
+        upper=upper-((upper-lower)/2)
+    else:
+        print(fixed)
+        break
