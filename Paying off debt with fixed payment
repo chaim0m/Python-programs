@@ -1,0 +1,12 @@
+fixed=10
+startbalance=balance
+while balance>0:
+    balance=startbalance
+    for i in range(12):
+       balance-=fixed
+       balance+=balance*(annualInterestRate/12)       
+    if balance>0:
+           fixed+=10
+    elif balance<=0:
+        print('Lowest Payment:', fixed)
+        break
