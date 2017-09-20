@@ -1,0 +1,8 @@
+counter=0
+while counter<12:
+    Min=monthlyPaymentRate*balance
+    balance-= Min
+    balance+=balance*(annualInterestRate/12)
+    counter+=1
+balance=round(balance,2)
+print(balance)
